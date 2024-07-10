@@ -1,8 +1,9 @@
 import React from "react";
 import { useRouter } from "next/router";
-import Layout from "../../components/Layout";  // Adjusted import path
+import Layout from "../../components/Layout"; // Adjusted import path
 import { Box, Card, Grid, Typography } from "@mui/material";
 import { Inter } from "next/font/google";
+import Image from "next/image"; // Import Image from next/image
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,17 +15,20 @@ const teams = [
   },
   {
     title: "Backend",
-    logo: "https://image.spreadshirtmedia.com/image-server/v1/mp/products/T127A1PA4192PT21X6Y6D1023765479W1871H2245/views/1,width=1200,height=630,appearanceId=1,backgroundColor=F2F2F2,modelId=2846,crop=design/team-backend-programmer-small-buttons.jpg",
+    logo:
+      "https://image.spreadshirtmedia.com/image-server/v1/mp/products/T127A1PA4192PT21X6Y6D1023765479W1871H2245/views/1,width=1200,height=630,appearanceId=1,backgroundColor=F2F2F2,modelId=2846,crop=design/team-backend-programmer-small-buttons.jpg",
     path: "/backend",
   },
   {
     title: "Mobile",
-    logo: "https://cdni.iconscout.com/illustration/premium/thumb/developer-team-building-mobile-application-2890185-2406688.png",
+    logo:
+      "https://cdni.iconscout.com/illustration/premium/thumb/developer-team-building-mobile-application-2890185-2406688.png",
     path: "/mobile",
   },
   {
     title: "Designer",
-    logo: "https://cdn5.vectorstock.com/i/1000x1000/79/29/design-team-vector-11357929.jpg",
+    logo:
+      "https://cdn5.vectorstock.com/i/1000x1000/79/29/design-team-vector-11357929.jpg",
     path: "/designers",
   },
 ];
@@ -68,7 +72,13 @@ export default function Home() {
                   },
                 }}
               >
-                <img src={item.logo} alt={item.title} style={{ width: "40px" }} />
+                <Image
+                  src={item.logo}
+                  alt={item.title}
+                  width={40}
+                  height={40}
+                  layout="fixed"
+                />
               </Box>
               <Typography variant="h6">{item.title}</Typography>
             </Card>

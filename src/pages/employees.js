@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import Layout from "../../components/Layout";
 import { useEffect, useState } from "react";
-import { getEmployees, getMembers } from "../../api";
+import { getEmployees } from "../../api";
 import { styled } from "@mui/material/styles";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -10,6 +10,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import Image from 'next/image';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -87,19 +88,21 @@ const Home = () => {
           <TableBody>
             {data.map((row, index) => (
               <StyledTableRow key={row.id}>
-                <StyledTableCell >
-                  {index + 1}
+                <StyledTableCell>{index + 1}</StyledTableCell>
+                <StyledTableCell>{row.name}</StyledTableCell>
+                <StyledTableCell>
+                  <Image
+                    src={row.image}
+                    alt={row.name}
+                    width={50}
+                    height={50}
+                    style={{ borderRadius: "50%" }}
+                  />
                 </StyledTableCell>
-                <StyledTableCell >
-                  {row.name}
-                </StyledTableCell>
-                <StyledTableCell >
-                  <img src={row.image} alt={row.name} style={{width:"50px"}}/>
-                </StyledTableCell>
-                <StyledTableCell >{row.role}</StyledTableCell>
-                <StyledTableCell >{row.age}</StyledTableCell>
-                <StyledTableCell >{row.level}</StyledTableCell>
-                <StyledTableCell >{row.join_date}</StyledTableCell>
+                <StyledTableCell>{row.role}</StyledTableCell>
+                <StyledTableCell>{row.age}</StyledTableCell>
+                <StyledTableCell>{row.level}</StyledTableCell>
+                <StyledTableCell>{row.join_date}</StyledTableCell>
               </StyledTableRow>
             ))}
           </TableBody>
