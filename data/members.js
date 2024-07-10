@@ -59,4 +59,5 @@ const employees = [
     join_date: "12-06-2024",
   },
 ];
+
 export default employees;

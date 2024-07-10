@@ -5,7 +5,7 @@ const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3000/a
 const getEmployees = async () => {
   try {
     const res = await axios.get(`${baseUrl}/members`);
-    return res.data.members;
+    return res.data.members || [];
   } catch (error) {
     console.error("Error fetching members:", error);
     return [];
@@ -15,10 +15,10 @@ const getEmployees = async () => {
 const getMembers = async () => {
   try {
     const res = await axios.get(`${baseUrl}/teamMembers`);
-    return res.data.teamMembers;
+    return res.data.teamMembers || { group: {} };
   } catch (error) {
     console.error("Error fetching members:", error);
-    return [];
+    return { group: {} };
   }
 };
 
