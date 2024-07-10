@@ -76,7 +76,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 
 export default function PersistentDrawerLeft({ children }) {
   const router = useRouter();
-  console.log(router.pathname.startsWith("/Teams"));
+  console.log(router.pathname.startsWith("/teams"));
 
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);

@@ -10,8 +10,8 @@ import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
 const menuItems = [
   { title: "Dashboard", icon: <DashboardIcon />, path: "/" },
   { title: "Projects", icon: <PermMediaIcon />, path: "/projects" },
-  { title: "Teams", icon: <WidgetsIcon />, path: "/Teams" },
   { title: "Employees", icon: <PeopleOutlineIcon />, path: "/employees" },
+  { title: "Teams", icon: <WidgetsIcon />, path: "/teams" },
   { title: "Meetings", icon: <LocalPhoneIcon />, path: "/meetings" },
   { title: "Tasks", icon: <FolderIcon />, path: "/tasks" },
   { title: "Settings", icon: <SettingsIcon />, path: "/settings" },

@@ -1,13 +1,13 @@
 import React from "react";
+import { useRouter } from "next/router";
 import Layout from "../../../components/Layout";
 import { Typography } from "@mui/material";
-import { useRouter } from "next/router";
 
-export default function Home() {
+export default function TeamDetail() {
   const router = useRouter();
   return (
     <Layout>
-      <Typography variant="h4"> Project: {router.query.projects}</Typography>
+      <Typography variant="h4">Team: {router.query.teams}</Typography>
     </Layout>
   );
 }
