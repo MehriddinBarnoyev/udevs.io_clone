@@ -110,7 +110,7 @@ export default function PersistentDrawerLeft({ children }) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Good Morning Anna
+            Good Morning Mehriddin
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
           <IconButton>
@@ -168,20 +168,7 @@ export default function PersistentDrawerLeft({ children }) {
             </MyListItem>
           ))}
         </List>
-        {/* <div>
-          <ul>
-            <li>
-              <MyLink href={"/tasks"}>
-                <p>Tasks</p>
-              </MyLink>
-            </li>
-            <li>
-              <MyLink href={"/Teams"}>
-                <p>Teams</p>
-              </MyLink>
-            </li>
-          </ul>
-        </div> */}
+        
       </Drawer>
       <Main open={open}>
         <DrawerHeader />
