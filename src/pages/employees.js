@@ -1,7 +1,5 @@
 import { Inter } from "next/font/google";
 import Layout from "../../components/Layout";
-import { useEffect, useState } from "react";
-import { getEmployees } from "../../api";
 import { styled } from "@mui/material/styles";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -11,6 +9,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Image from 'next/image';
+import { getEmployees } from "../../api";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -33,34 +32,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 const inter = Inter({ subsets: ["latin"] });
 
-const Home = () => {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    getEmployees()
-      .then((res) => {
-        console.log(res);
-        setData(res);
-      })
-      .catch((error) => {
-        console.error("Error fetching members:", error);
-        setError(error.message);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  }, []);
-
-  if (loading) {
-    return (
-      <Layout>
-        <h1>Loading...</h1>
-      </Layout>
-    );
-  }
-
+const Home = ({ data, error }) => {
   if (error) {
     return (
       <Layout>
@@ -111,5 +83,24 @@ const Home = () => {
     </Layout>
   );
 };
+
+export async function getStaticProps() {
+  try {
+    const data = await getEmployees();
+    return {
+      props: {
+        data: data || [],
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching members:", error);
+    return {
+      props: {
+        data: [],
+        error: error.message,
+      },
+    };
+  }
+}
 
 export default Home;
