@@ -1,86 +1,76 @@
-import Image from "next/image";
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Card, Grid, Typography } from "@mui/material";
 import React from "react";
-import { styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
-import LineChart from "./Chart001";
-import rasm1 from "../Images/mine.jpg";
-import rasm2 from "../Images/free-images.jpg";
+import Groups2Icon from "@mui/icons-material/Groups2";
+import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
+import SettingsIcon from "@mui/icons-material/Settings";
+import DesignServicesIcon from "@mui/icons-material/DesignServices";
+import OptimizationIcon from "@mui/icons-material/TrendingUp";
+import LaptopMacIcon from "@mui/icons-material/LaptopMac";
+import { Fade } from "react-awesome-reveal";
 
-const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: "center",
-    color: theme.palette.text.secondary,
-  }));
+const services = [
+  { title: "Team", icon: <Groups2Icon fontSize="large" /> },
+  {
+    title: "Development of mobile applications",
+    icon: <PhoneIphoneIcon fontSize="large" />,
+  },
+  {
+    title: "Development, implementation ERP",
+    icon: <SettingsIcon fontSize="large" />,
+  },
+  {
+    title: "User interface, User experience design",
+    icon: <DesignServicesIcon fontSize="large" />,
+  },
+  {
+    title: "Optimization IT consulting infrastructure",
+    icon: <OptimizationIcon fontSize="large" />,
+  },
+  {
+    title: "IT consulting and developing web site",
+    icon: <LaptopMacIcon fontSize="large" />,
+  },
+];
 
 export default function Part2() {
   return (
-    <Box sx={{ paddingTop: "50px" }}>
-      <Box sx={{ flexGrow: 1 }}>
-        <Grid container spacing={2}>
-          <Grid item xs={8}>
-            <Item>
-              <LineChart />
-            </Item>
-          </Grid>
-          <Grid item xs={4}>
-            <Item>
-              <Box>
-                <Box display={"flex"} justifyContent={"space-between"}>
-                  <Typography>Notifications</Typography>
-                  <Button>
-                    <Typography color={"#6956E5"}>View all</Typography>
-                  </Button>
-                </Box>
-                <Box className="row py-2" display={"flex"}>
-                  <div className="col">
-                    <Image src={rasm1} alt="rasm bor" layout="responsive" style={{width:"50px"}}/>
-                  </div>
-                  <div className="col">
-                    <Typography
-                      sx={{ fontWeight: "400", fontSize: "16px" }}
-                      color={"#00000e"}
-                    >
-                      Ellie joined developers club
-                    </Typography>
-                    <span>04 April, 2021| 04:00 pm </span>
-                  </div>
-                </Box>
-                <div className="row py-2">
-                  <div className="col">
-                    <Image src={rasm2} alt="rasm bor" layout="responsive" />
-                  </div>
-                  <div className="col">
-                    <Typography
-                      sx={{ fontWeight: "400", fontSize: "16px" }}
-                      color={"#00000e"}
-                    >
-                      Ellie joined developers club
-                    </Typography>
-                    <span>04 April, 2021| 04:00 pm </span>
-                  </div>
-                </div>
-                <div className="row py-2">
-                  <div className="col">
-                    <Image src={rasm1} alt="rasm bor" layout="responsive" />
-                  </div>
-                  <div className="col">
-                    <Typography
-                      sx={{ fontWeight: "400", fontSize: "16px" }}
-                      color={"#00000e"}
-                    >
-                      Ellie joined developers club
-                    </Typography>
-                    <span>04 April, 2021| 04:00 pm </span>
-                  </div>
-                </div>
-              </Box>
-            </Item>
-          </Grid>
-        </Grid>
+    <div className="container p-5">
+      <Box sx={{ marginTop: "40px" }}>
+        <Fade triggerOnce>
+          <Typography fontWeight={"800"} color={"#1b5bf7"} fontSize={"64px"}>
+            Our service
+          </Typography>
+        </Fade>
       </Box>
-    </Box>
+      <Box justifyContent={"center"}>
+        <Fade direction="up" triggerOnce>
+          <Grid container spacing={2}>
+            {services.map((service, index) => (
+              <>
+                <Grid item xs={12} sm={6} md={4} key={index}>
+                  <Card
+                    style={{
+                      background: "#F4F7FF",
+                      padding: "20px",
+                      paddingTop: "60px",
+                      paddingBottom: "80px",
+                    }}
+                  >
+                    <Box color={"#1b5bf7"} display="flex" mb={2}>
+                      {service.icon}
+                    </Box>
+                    <Box display="flex">
+                      <Typography fontSize="20px" fontWeight="bold">
+                        {service.title}
+                      </Typography>
+                    </Box>
+                  </Card>
+                </Grid>
+              </>
+            ))}
+          </Grid>
+        </Fade>
+      </Box>
+    </div>
   );
 }

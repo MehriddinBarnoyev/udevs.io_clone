@@ -3,7 +3,7 @@ import { orange } from "@mui/material/colors";
 
 const theme = createTheme({
   palette: {
-    primary: { main: "#fff " },
+    main: { main: "#1B5BF7 " },
   },
   status: {
     danger: orange[500],
