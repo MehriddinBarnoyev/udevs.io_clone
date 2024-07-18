@@ -29,6 +29,7 @@ const Carousel = () => {
         fontSize={{ xs: "30px", sm: "40px", md: "50px", lg: "60px" }}
         fontFamily="Manrope, sans-serif"
         marginTop={"40px"}
+        className='container'
       >
         Our clients
       </Typography>

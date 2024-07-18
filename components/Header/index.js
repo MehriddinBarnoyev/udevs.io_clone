@@ -317,6 +317,7 @@ const Header = () => {
                 >
                   <StyledButton
                     variant="contained"
+                    type="submit"
                     style={{ borderRadius: "10px", backgroundColor: "#3f51b5" }}
                   >
                     Contact

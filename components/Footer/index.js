@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="container">
         <Box sx={{ textAlign: "center", paddingBottom: "20px" }}>
           <Image
-            src="/path/to/your/image.svg"
+            src="https://marketing.uz/uploads/company/9210dceedee0f9e577158e4f31db88b4.jpg"
             alt="Udevs"
             width={168}
             height={56}
@@ -202,7 +202,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
               >
                 <Image
-                  src="/path/to/your/instagram-icon.png"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png"
                   alt="Instagram"
                   width={40}
                   height={40}
@@ -215,7 +215,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
               >
                 <Image
-                  src="/path/to/your/twitter-icon.png"
+                  src="https://cdn.freebiesupply.com/logos/large/2x/twitter-3-logo-png-transparent.png"
                   alt="Twitter"
                   width={40}
                   height={40}
@@ -228,7 +228,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
               >
                 <Image
-                  src="/path/to/your/youtube-icon.png"
+                  src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png"
                   alt="YouTube"
                   width={40}
                   height={40}
@@ -241,7 +241,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
               >
                 <Image
-                  src="/path/to/your/facebook-icon.png"
+                  src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Facebook_Logo_2023.png"
                   alt="Facebook"
                   width={40}
                   height={40}

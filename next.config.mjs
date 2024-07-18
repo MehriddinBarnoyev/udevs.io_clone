@@ -31,6 +31,7 @@ export default {
        "dostavkainfo.uz",
        "static.vecteezy.com" ,
        "png.pngtree.com",
+       'cdn.freebiesupply.com'
     ], // Add any other domains you need to allow here
   },
 };
